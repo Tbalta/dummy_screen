@@ -11,7 +11,7 @@ clear the screen
 ```
 
 ## draw a line
-draw a line from (x0, y0) to (x0, y0)
+draw a line from (x0, y0) to (x1, y1)
 ```json
 {
     "type": "draw_line",
