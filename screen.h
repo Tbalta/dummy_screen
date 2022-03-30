@@ -1,11 +1,11 @@
 #pragma once
 #include <cstddef>
 
-class Display
+class Screen
 {
-private:
-    size_t witdth;
-    size_t height;
+protected:
+    size_t width_;
+    size_t height_;
 public:   
     // Compatibility function do nothing
     // virtual void begin() = 0;
@@ -18,6 +18,6 @@ public:
     virtual void setColor(int r, int g, int b) = 0;
     virtual void setColor(int color) = 0;
     virtual void fillRect(int x, int y, int w, int h) = 0;
-
+    Screen(size_t width, size_t height) : width_(width), height_(height){};
 
 };

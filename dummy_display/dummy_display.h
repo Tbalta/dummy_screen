@@ -1,16 +1,14 @@
 #pragma once
 
-#include "../display.h"
+#include "../screen.h"
 #include <cstdlib>
 #include "../tcp_client/tcp_client.h"
 
 
-class dummy_display : public Display
+class dummy_display : public Screen
 {
 private:
-    size_t witdth;
-    size_t height;
-    tcp_client client;
+    tcp_client client_;
 
 public:
     dummy_display(size_t width, size_t height, std::string ip, std::string port);
