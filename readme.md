@@ -1,7 +1,15 @@
 This code aim to provide a dummy screen for the argos project.
 drawing to the screen will be replaced by tcp communication with an external server.
-
 # Protocol
+## init
+Initialise the screen with specified width, and height.
+```json
+{
+    "type": "init", 
+    "width": 200,
+    "height": 200
+}
+```
 ## clear
 clear the screen
 ```json
@@ -9,7 +17,6 @@ clear the screen
     "type": "clear"
 }
 ```
-
 ## draw a line
 draw a line from (x0, y0) to (x1, y1)
 ```json

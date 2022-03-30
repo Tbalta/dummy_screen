@@ -1,9 +1,21 @@
 #include "dummy_display.h"
 
+
+void dummy_display::begin()
+{
+    std::string msg = "{\"type\":\"init\",\"width\":" + std::to_string(width_) + ",\"height\":" + std::to_string(height_) + "}";
+    client_.Send(msg);
+}
+
 void dummy_display::drawLine(int x0, int y0, int x1, int y1)
 {
     std::string msg = "{\"type\":\"line\",\"x0\":" + std::to_string(x0) + ",\"y0\":" + std::to_string(y0) + ",\"x1\":" + std::to_string(x1) + ",\"y1\":" + std::to_string(y1) + "}";
     client_.Send(msg);
+}
+
+void dummy_display::drawVLine(int x0, int y0, int y1)
+{
+    drawLine(x0, y0, x0, y1);
 }
 
 void dummy_display::setColor(int r, int g, int b)
